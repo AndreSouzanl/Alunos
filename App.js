@@ -5,6 +5,7 @@ import {
   Poppins_400Regular,
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
+import Home from "./src/screens/home/home.jsx";
 
 
 export default function App() {
@@ -13,11 +14,11 @@ export default function App() {
     Poppins_700Bold,
   });
 
-  return ( fontsLoaded ? 
-    <View>
-      <Text>Alunos</Text>
+  return (fontsLoaded ? 
+    <>
       <StatusBar style="auto" />
-    </View>: <ActivityIndicator />
+      <Home />
+    </> : <ActivityIndicator />
   ) 
   
 }

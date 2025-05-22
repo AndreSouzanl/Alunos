@@ -2,8 +2,9 @@ const COLORS = {
 blue: "#0071FE",
 gray: "#343942",
 white: "#FFFFFF",
-red:" #E24040",
-dark_gray: "#1D2026"
+red:"#E24040",
+dark_gray: "#1D2026",
+mediun_gray: "#2A2F39",
 };
 
 const FONTS_FAMILY  = {
