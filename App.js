@@ -6,6 +6,7 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
 import Home from "./src/screens/home/home.jsx";
+import Cursos from "./src/screens/cursos/cursos.jsx";
 
 
 export default function App() {
@@ -16,8 +17,9 @@ export default function App() {
 
   return (fontsLoaded ? 
     <>
-      <StatusBar style="auto" />
-      <Home />
+      <StatusBar style="light" />
+      {/* <Home /> */}
+      <Cursos />
     </> : <ActivityIndicator />
   ) 
   
