@@ -1,11 +1,12 @@
-import { FlatList, Image, Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 import { styles } from "../cursos/cursos.style.js";
-import icons from "../../contants/icons.js";
 import Button from "../../components/button/button.jsx";
 import Curso from "../../components/curso/curso.jsx";
+import Titulo from "../../components/titulo/titulo.jsx";
+import icons from "../../contants/icons.js";
 
 export default function cursos() {
-  const cursos = ["contabilidade", "Eletronica", "pintura", "Desenho",];
+  const cursos = ["contabilidade", "Eletronica", "pintura", "Desenho"];
 
   function clickcursos(curso) {
     console.log("clicou curso " + curso);
@@ -13,9 +14,11 @@ export default function cursos() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={icons.group} />
-      <Text style={styles.titulo}>Cursos</Text>
-      <Text style={styles.subtitulo}>Gerencie os cursos de sua escola.</Text>
+      <Titulo
+        icone={icons.group}
+        titulo="Cursos"
+        subtitulo="Gerencie os cursos da sua escola."
+     />
 
       <FlatList
         data={cursos}
@@ -31,4 +34,4 @@ export default function cursos() {
     </View>
   );
 }
-// componente titulo
+// componente textbox
