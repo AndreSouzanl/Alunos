@@ -1,20 +1,21 @@
-import { FlatList, View, Text, Touchable, TouchableOpacity, Image } from "react-native";
+import { FlatList, View, TouchableOpacity, Image } from "react-native";
 import { styles } from "./alunos.style.js";
 import Button from "../../components/button/button.jsx";
 
 import Titulo from "../../components/titulo/titulo.jsx";
 import icons from "../../contants/icons.js";
 import TextBox from "../../components/textbox/textbox.jsx";
+import Aluno from "../../components/aluno/aluno.jsx";
 
 export default function Alunos() {
   const alunos = ["Andre", "Helber", "Maria", "Ana"];
 
-  function clickcursos(curso) {
-    console.log("clicou curso " + curso);
-  }
-
   function onchangeText(texto) {
     console.log(texto);
+  }
+
+  function DeleteAlunos(aluno) {
+    console.log("clicou aluno " + aluno);
   }
 
   return (
@@ -39,7 +40,7 @@ export default function Alunos() {
         keyExtractor={(curso) => curso}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
-          return <Text>{item}</Text>;
+          return <Aluno nome={item} onDelete={DeleteAlunos} />;
         }}
       />
 
@@ -47,4 +48,4 @@ export default function Alunos() {
     </View>
   );
 }
-// componente textbox
+

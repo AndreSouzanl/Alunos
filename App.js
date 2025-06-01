@@ -27,5 +27,7 @@ export default function App() {
   
 }
 
-// componente Aluno
+// Cria toda navegação da aplicação
+
+
 
