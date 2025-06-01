@@ -5,12 +5,11 @@ import Curso from "../../components/curso/curso.jsx";
 import Titulo from "../../components/titulo/titulo.jsx";
 import icons from "../../contants/icons.js";
 
-
-export default function cursos() {
+export default function cursos(props) {
   const cursos = ["contabilidade", "Eletronica", "pintura", "Desenho"];
 
   function clickcursos(curso) {
-    console.log("clicou curso " + curso);
+    props.navigation.navigate("alunos", { nome: curso });
   }
 
   return (
@@ -31,7 +30,11 @@ export default function cursos() {
         }}
       />
 
-      <Button texto="Cadastrar novo curso" estilo="blue" />
+      <Button
+        texto="Cadastrar novo curso"
+        estilo="blue"
+        onPress={() => props.navigation.navigate("novo-curso")}
+      />
     </View>
   );
 }

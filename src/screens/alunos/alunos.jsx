@@ -7,8 +7,9 @@ import icons from "../../contants/icons.js";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Aluno from "../../components/aluno/aluno.jsx";
 
-export default function Alunos() {
+export default function Alunos(props) {
   const alunos = ["Andre", "Helber", "Maria", "Ana"];
+  const cursos = props.route.params.nome;
 
   function onchangeText(texto) {
     console.log(texto);
@@ -22,7 +23,7 @@ export default function Alunos() {
     <View style={styles.container}>
       <Titulo
         icone={icons.group}
-        titulo="Contabilidade"
+        titulo={cursos}
         subtitulo="Gerencie os alunos desse curso."
       />
 
