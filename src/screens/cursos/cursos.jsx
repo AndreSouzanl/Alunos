@@ -5,6 +5,7 @@ import Curso from "../../components/curso/curso.jsx";
 import Titulo from "../../components/titulo/titulo.jsx";
 import icons from "../../contants/icons.js";
 
+
 export default function cursos() {
   const cursos = ["contabilidade", "Eletronica", "pintura", "Desenho"];
 
@@ -18,7 +19,7 @@ export default function cursos() {
         icone={icons.group}
         titulo="Cursos"
         subtitulo="Gerencie os cursos da sua escola."
-     />
+      />
 
       <FlatList
         data={cursos}

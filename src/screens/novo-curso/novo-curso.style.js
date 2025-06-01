@@ -5,14 +5,14 @@ export const styles = {
     flex: 1,
     backgroundColor: COLORS.gray,
     alignItems: "center",
-    paddingTop: 30,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 30,
+    justifyContent: "center",
+    padding: 15
   },
-  
-  list:{
+  form:{
     width: "100%",
-    
+    height: 50,
+    marginTop: 20,
   }
+  
+  
 };

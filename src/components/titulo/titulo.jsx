@@ -1,4 +1,4 @@
-import { Text, Image } from "react-native";
+import { Text, Image} from "react-native";
 import { styles } from "./titulo.style";
 
 

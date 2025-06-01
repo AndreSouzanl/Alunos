@@ -7,6 +7,8 @@ import {
 } from "@expo-google-fonts/poppins";
 import Home from "./src/screens/home/home.jsx";
 import Cursos from "./src/screens/cursos/cursos.jsx";
+import NovoCurso from "./src/screens/novo-curso/novo-curso.jsx";
+import Alunos from "./src/screens/alunos/alunos.jsx";
 
 
 export default function App() {
@@ -19,9 +21,11 @@ export default function App() {
     <>
       <StatusBar style="light" />
       {/* <Home /> */}
-      <Cursos />
+      <Alunos />
     </> : <ActivityIndicator />
   ) 
   
 }
+
+// componente Aluno
 
