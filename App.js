@@ -64,4 +64,4 @@ export default function App() {
   );
 }
 
-// Preparando para receber os dados com AsyncStorage
+// listar e inserir cursos

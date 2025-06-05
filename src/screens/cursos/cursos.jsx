@@ -5,8 +5,8 @@ import Curso from "../../components/curso/curso.jsx";
 import Titulo from "../../components/titulo/titulo.jsx";
 import icons from "../../contants/icons.js";
 
-export default function cursos(props) {
-  const cursos = ["contabilidade", "Eletronica", "pintura", "Desenho"];
+export default function Cursos(props) {
+  const cursos = ["contabilidade", "Eletronica", "Pintura", "Desenho"];
 
   function clickcursos(curso) {
     props.navigation.navigate("alunos", { nome: curso });
@@ -38,4 +38,4 @@ export default function cursos(props) {
     </View>
   );
 }
-// componente textbox
+
