@@ -7,7 +7,7 @@ export default function TextBox(props) {
       placeholder={props.placeholder}
       placeholderTextColor={styles.placeholder}
       value={props.value}
-      onChangeText={(texto) => props.onChangeText?.(texto)}
+      onChangeText={(texto) => props.onChangeText(texto)}
     />
   
 }

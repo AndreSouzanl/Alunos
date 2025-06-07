@@ -64,4 +64,4 @@ export default function App() {
   );
 }
 
-// listar e inserir cursos
+// listar , inserir, excluir Alunos no AsyncStorage

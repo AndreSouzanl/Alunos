@@ -4,13 +4,25 @@ import Button from "../../components/button/button.jsx";
 import Curso from "../../components/curso/curso.jsx";
 import Titulo from "../../components/titulo/titulo.jsx";
 import icons from "../../contants/icons.js";
+import dbCursos from "../../database/cursos.js";
+import { useState, useCallback, use } from "react";
+import { useFocusEffect } from "@react-navigation/native";
+
 
 export default function Cursos(props) {
-  const cursos = ["contabilidade", "Eletronica", "Pintura", "Desenho"];
+  const [cursos, setCursos] = useState([]);
 
   function clickcursos(curso) {
     props.navigation.navigate("alunos", { nome: curso });
   }
+
+  async function listarCursos(){
+    setCursos(await dbCursos.Listar());
+  }
+
+  useFocusEffect(useCallback(() => {
+    listarCursos();
+  }, []));
 
   return (
     <View style={styles.container}>
