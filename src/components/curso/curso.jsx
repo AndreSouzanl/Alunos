@@ -3,10 +3,9 @@ import { styles } from "./curso.style.js";
 import icons from "../../contants/icons.js";
 
 export default function Curso(props) {
- 
   return (
     <TouchableOpacity
-    onPress={() => props.onPress(props.nome)}
+      onPress={() => props.onPress(props.nome)}
       style={styles.curso}
     >
       <Image style={styles.icone} source={icons.group} />

@@ -18,7 +18,16 @@ async function Inserir(curso) {
 
   try {
     const cursos = await Listar();
-    cursos.push(curso);
+    //consite duplicidade
+    const resultado = cursos.filter((c) => c == curso);
+
+    if (resultado.length > 0) {
+      throw "Esse curso já está cadastrado!";
+      return;
+    } else {
+      cursos.push(curso);
+    }
+
     await AsyncStorage.setItem("app-alunos-cursos", JSON.stringify(cursos));
   } catch (error) {
     throw error;
@@ -33,7 +42,7 @@ async function Excluir(curso) {
 
   try {
     const cursos = await Listar();
-    const novaLista = cursos.filter(item => item != curso);
+    const novaLista = cursos.filter((item) => item != curso);
     await AsyncStorage.setItem("app-alunos-cursos", JSON.stringify(novaLista));
     await AsyncStorage.removeItem("app-alunos-cursos." + curso);
   } catch (error) {

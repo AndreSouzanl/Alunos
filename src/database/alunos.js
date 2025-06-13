@@ -22,8 +22,20 @@ async function Inserir(curso, aluno) {
 
   try {
     const alunos = await Listar(curso);
-    alunos.push(aluno);
-    await AsyncStorage.setItem("app-alunos-cursos." + curso, JSON.stringify(alunos));
+
+    const resultado = alunos.filter((a) => a == aluno);
+
+    if (resultado.length > 0) {
+      throw "Esse aluno já está matriculado na escola!";
+      return;
+    } else {
+      alunos.push(aluno);
+    }
+
+    await AsyncStorage.setItem(
+      "app-alunos-cursos." + curso,
+      JSON.stringify(alunos)
+    );
   } catch (error) {
     throw error;
   }
@@ -42,8 +54,11 @@ async function Excluir(curso, aluno) {
 
   try {
     const alunos = await Listar(curso);
-    const novaLista = alunos.filter(item => item != aluno);
-    await AsyncStorage.setItem("app-alunos-cursos." + curso, JSON.stringify(novaLista));
+    const novaLista = alunos.filter((item) => item != aluno);
+    await AsyncStorage.setItem(
+      "app-alunos-cursos." + curso,
+      JSON.stringify(novaLista)
+    );
   } catch (error) {
     throw error;
   }
